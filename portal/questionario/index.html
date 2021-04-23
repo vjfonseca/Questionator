@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel=stylesheet href="style.css">
+    <title>Document</title>
+</head>
+
+<body class="text-center">
+    <div id=questionarioArea class="text-left">
+        <form class=form id=formQuestionario name=formQuestionario>
+            <br>
+            <h1>Criar Questionário</h1>
+            <br>
+            <div class="form-group">
+                <label for="Titulo">Titulo</label>
+                <input name=Titulo type="text" class="form-control" id="Titulo" placeholder="Informe um título para pergunta">
+            </div>
+
+            <div class="form-group">
+                <label for="Usuario">Usuário</label>
+                <input name=Usuario type="text" class="form-control" id="Usuario" placeholder="Informe um usuário">
+            </div>
+
+            <div class="form-group">
+                <label for="Data">Data</label>
+                <input name=DataInserção type="date" class="form-control" id="DataInserção" placeholder="DataInserção">
+            </div>
+            <div class="col-md-12 text-center">
+                <button id=submitQuestionario type="submit" class="btn btn-primary" value="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>

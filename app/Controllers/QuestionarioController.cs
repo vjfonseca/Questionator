@@ -14,7 +14,7 @@ namespace app.Controllers
 
         public ActionResult<Questionario> Get(int id)
         {
-            return Ok(_repo.GetById(id));
+            return Ok(id);
         }
         [HttpPost]
         public ActionResult<Questionario> Create(Questionario questionario)
