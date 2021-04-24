@@ -29,14 +29,14 @@ namespace app.Controllers
             return Ok(q);
         }
         [HttpPost]
-        public ActionResult<Questionario> Create([FromBody] Questionario questionario)
+        public ActionResult<Questionario> Create([FromForm] Questionario questionario)
         {
             var q = _repo.Create(questionario);
             if (q == null) throw new System.Exception();
             return Ok(q);
         }
         [HttpPost]
-        public ActionResult<Questionario> AddPergunta([FromBody] Pergunta pergunta)
+        public ActionResult<Questionario> AddPergunta([FromForm] Pergunta pergunta)
         {
             var q = _repo.AddPergunta(pergunta);
             return Ok(q);

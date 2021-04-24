@@ -10,9 +10,5 @@ namespace app.Models
         public DateTime DataInserção { get; set; }
         public List<Pergunta> Perguntas { get; set; }  = new List<Pergunta>();
         public int UsuarioId { get; set; }
-        public Questionario()
-        {
-            Perguntas = new List<Pergunta>();
-        }
     }
 }
