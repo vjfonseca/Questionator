@@ -5,10 +5,14 @@ namespace app.Models
 {
     public class Questionario
     {
-        //  Título, Usuário, Data de cadastro
+        public int Id { get; set; }
         public string Titulo { get; set; }    
-        public string Usuario { get; set; }
         public DateTime DataInserção { get; set; }
-        public IEnumerable<Resposta> Respostas { get; set; }
+        public List<Pergunta> Perguntas { get; set; }  = new List<Pergunta>();
+        public int UsuarioId { get; set; }
+        public Questionario()
+        {
+            Perguntas = new List<Pergunta>();
+        }
     }
 }
