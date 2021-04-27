@@ -7,8 +7,9 @@ namespace app.Data
     {
         public Questionario GetById(int id);
         public IEnumerable<Questionario> GetAll(int userId);
-        public Questionario Create(Questionario questionario);
-        public Questionario AddResposta(Resposta resposta);
-        public Questionario AddPergunta(Pergunta pergunta);
+        public void Create(Questionario questionario);
+        public void AddResposta(Resposta resposta);
+        public void AddPergunta(Pergunta pergunta);
+        public bool hasPergunta(int id);
     }
 }

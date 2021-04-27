@@ -22,30 +22,36 @@ namespace app.Controllers
         public ActionResult<Questionario> GetById(int id)
         {
             var q = _repo.GetById(id);
-            if (q == null)
+            if (q.Titulo == null)
             {
                 return NotFound("Id de questionario Invalido");
             }
             return Ok(q);
         }
         [HttpPost]
-        public ActionResult<Questionario> Create([FromForm] Questionario questionario)
+        public ActionResult<Questionario> Create([FromBody] Questionario questionario)
         {
-            var q = _repo.Create(questionario);
-            if (q == null) throw new System.Exception();
+            if (questionario == null) return StatusCode(499);
+            if (questionario.Titulo == null) return StatusCode(499);
+            _repo.Create(questionario);
+            var q = _repo.GetById(questionario.Id);
             return Ok(q);
         }
         [HttpPost]
-        public ActionResult<Questionario> AddPergunta([FromForm] Pergunta pergunta)
+        public ActionResult<Questionario> AddPergunta([FromBody] Pergunta pergunta)
         {
-            var q = _repo.AddPergunta(pergunta);
-            return Ok(q);
+            _repo.AddPergunta(pergunta);
+            return Ok(_repo.GetById(pergunta.IdQuestionario));
         }
         [HttpPost]
-        public ActionResult<Questionario> AddResposta([FromBody] Resposta resposta)
+        public ActionResult<IEnumerable<Questionario>> AddResposta([FromBody] Resposta resposta)
         {
-            var q = _repo.AddResposta(resposta);
-            return Ok(q);
+            if (!_repo.hasPergunta(resposta.PerguntaId))
+            {
+                return BadRequest("Pergunta não encontrada.");
+            }
+            _repo.AddResposta(resposta);
+            return Ok("pergunta adicionada");
         }
     }
 }
