@@ -24,7 +24,7 @@ namespace app.Controllers
             var q = _repo.GetById(id);
             if (q.Titulo == null)
             {
-                return NotFound("Id de questionario Invalido");
+                return StatusCode(499);
             }
             return Ok(q);
         }

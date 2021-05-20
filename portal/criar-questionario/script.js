@@ -19,6 +19,6 @@ const submitEvent = formQuestionario.addEventListener('submit', async function (
 
   const request = await fetch("https://localhost:5001/Questionario/Create", requestOptions)
   const data = await request.json();
-  data.then(window.location.href = ("http://127.0.0.1:5500/portal/listarQuestionarios/"));
+  data.then(window.location.href = ("http://127.0.0.1:5500/portal/listar-questionarios/"));
 });
 
