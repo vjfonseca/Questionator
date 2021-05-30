@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Questionarios</title>
+</head>
+
+<body style="background-color: gainsboro;">
+    <div id=questionarioArea class="container">
+        <ul class="list-group pt-2 pb-2" id=list-questionarios>
+            <li id=list-element class="list-group-item mb-3 mx-auto w-100" style="display: none;">
+                <div class="d-flex row align-items-center justify-content-between">
+                    <h6 class="col-6" id=titulo></h6>
+                    <div class="col-6 d-flex justify-content-end"> 
+                        <button type="button" class="btn btn-primary mr-2" 
+                            onclick="responder(this.parentNode.parentNode.parentNode.id)">Responder</button>
+                        <button type="button" class="btn btn-warning"
+                            onclick="edit(this.parentNode.parentNode.parentNode.id)">Editar</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="container d-flex justify-content-center">
+            <h3 id=carregando> Carregando...</h3>
+            <button type="button" onclick="criar()" class="btn btn-danger col-4"> Criar</button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

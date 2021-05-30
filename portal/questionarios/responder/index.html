@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+<body style="background-color: gainsboro;" class="container">
+    <div id=questionarioArea class="container text-left">
+        <form class=form id=formResponder name=formResponder>
+            <div class="container">
+                <h3 id=titulo class="text-center"></h3>
+
+                <ol class="perguntas my-4">
+                    <li class="my-3" id="perguntaTemplate">
+                        <h6></h6>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" perguntaId=""></textarea>
+                        </div>
+                    </li>
+                </ol>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-dark text-center">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script src="script.js"></script>
+
+</html>
